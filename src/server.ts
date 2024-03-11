@@ -1,7 +1,6 @@
 import fastify, { FastifyInstance } from "fastify"
 import rateLimit from "@fastify/rate-limit"
 import fastifyCsrf from "@fastify/csrf-protection"
-import fastifyCsrf from "@fastify/csrf-protection"
 import helmet from '@fastify/helmet'
 import compress from '@fastify/compress'
 import { UserRoutes } from "./user/routes.js";
