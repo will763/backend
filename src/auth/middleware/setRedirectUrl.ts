@@ -9,10 +9,11 @@ export async function setRedirectUrl(req: FastifyRequest, reply: FastifyReply) {
         return;
     }
 
-    reply.setCookie('redirect_url_frontend', redirectUrl, {
+    reply.setCookie('__Host-redirect_url_frontend', redirectUrl, {
         path:'/',
         httpOnly:true,
         secure:true,
-        sameSite:'lax',
+        sameSite:'none',
+        partitioned:true
     })
 };
