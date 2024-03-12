@@ -44,7 +44,7 @@ export async function authRoutes(fastify: FastifyInstance) {
     { preValidation: fastifyPassport.authenticate('azuread-openidconnect') },
     (req, reply) => {
 
-      const { redirect_url_frontend } = req.cookies
+      const redirect_url_frontend  = req.cookies["__Host-redirect_url_frontend"]
 
       if (!redirect_url_frontend) {
         reply.code(400).send({ error: 'O cookie redirect_url_frontend está ausente' })
