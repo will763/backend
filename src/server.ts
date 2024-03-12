@@ -34,12 +34,10 @@ app.setNotFoundHandler({
 
 app.register(fastifySecureSession, {
   key: Buffer.from(`${process.env.SECRET_KEY}`),
-  cookieName:'__Host-session',
   cookie: {
     path: '/',
     httpOnly: true,
-    sameSite:'none',
-    partitioned:true
+    sameSite:'none'
   }
 })
 
